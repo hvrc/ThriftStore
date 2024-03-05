@@ -1,8 +1,23 @@
-﻿@{
+﻿@* Set the page title. *@
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <h2>User Actions</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><a class="text-decoration-none" asp-controller="User" asp-action="UserIndex">User Index</a></li>
+        <li class="list-group-item"><a class="text-decoration-none" asp-controller="User" asp-action="UserDetails">User Details</a></li>
+        <li class="list-group-item"><a class="text-decoration-none" asp-controller="User" asp-action="UserLogin">User Login</a></li>
+        <li class="list-group-item"><a class="text-decoration-none" asp-controller="User" asp-action="UserRegistration">User Registration</a></li>
+    </ul>
+</div>
+
+<div class="container mt-5">
+    <h2>Listing Actions</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><a class="text-decoration-none" asp-controller="Listing" asp-action="ListingIndex">Listing Index</a></li>
+        <li class="list-group-item"><a class="text-decoration-none" asp-controller="Listing" asp-action="ListingDetails">Listing Details</a></li>
+        <li class="list-group-item"><a class="text-decoration-none" asp-controller="Listing" asp-action="ListingCreate">Listing Create</a></li>
+    </ul>
 </div>
