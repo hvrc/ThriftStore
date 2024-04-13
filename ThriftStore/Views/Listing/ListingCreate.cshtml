@@ -1,0 +1,45 @@
+﻿@model ThriftStore.Models.Listing
+
+<h2>Create Listing</h2>
+
+<form asp-action="ListingCreate" method="post">
+    <div class="form-group">
+        <label for="TempUserID">User ID:</label>
+        <input type="text" class="form-control" id="TempUserID" name="TempUserID" value="@Model.TempUserID" />
+        <span asp-validation-for="TempUserID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Address">Address:</label>
+        <input type="text" class="form-control" id="Address" name="Address" value="@Model.Address" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Price">Price:</label>
+        <input type="text" class="form-control" id="Price" name="Price" value="@Model.Price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description:</label>
+        <textarea class="form-control" id="Description" name="Description">@Model.Description</textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="IsAvailable">Is Available:</label>
+        <div>
+            <input type="radio" id="IsAvailableYes" name="IsAvailable" value="true" checked>
+            <label for="IsAvailableYes">Yes</label>
+        </div>
+        <div>
+            <input type="radio" id="IsAvailableNo" name="IsAvailable" value="false">
+            <label for="IsAvailableNo">No</label>
+        </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<p>
+    <br>
+    <a asp-action="ListingIndex">Back to the list of all Listings</a>
+</p>

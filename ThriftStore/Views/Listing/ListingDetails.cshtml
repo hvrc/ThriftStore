@@ -1,0 +1,34 @@
+﻿@model ThriftStore.Models.Listing
+
+<div class="container mt-4">
+    <h2>Listing Details</h2>
+
+    <dl class="row">
+        <dt class="col-sm-2">Listing ID:</dt>
+        <dd class="col-sm-10">@Model.ListingID</dd>
+
+        <dt class="col-sm-2">User ID:</dt>
+        <dd class="col-sm-10">@Model.TempUserID</dd>
+
+        <dt class="col-sm-2">Address:</dt>
+        <dd class="col-sm-10">@Model.Address</dd>
+
+        <dt class="col-sm-2">Price:</dt>
+        <dd class="col-sm-10">@Model.Price</dd>
+
+        <dt class="col-sm-2">Description:</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+
+        <dt class="col-sm-2">Is Available:</dt>
+        <dd class="col-sm-10">@Model.IsAvailable</dd>
+
+        <dt class="col-sm-2">Owned By:</dt>
+        <dd class="col-sm-10">
+            <a asp-action="UserDetails" asp-controller="User" asp-route-id="@Model.TempUserID">User Details</a>
+        </dd>
+    </dl>
+
+    <p>
+        <a asp-action="ListingIndex">Back to the list of all Listings</a>
+    </p>
+</div>

@@ -1,0 +1,22 @@
+﻿@model ThriftStore.Models.User
+
+<h2>User Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">User ID:</dt>
+    <dd class="col-sm-10">@Model.UserID</dd>
+
+    <dt class="col-sm-2">First Name:</dt>
+    <dd class="col-sm-10">@Model.FirstName</dd>
+
+    <dt class="col-sm-2">Last Name:</dt>
+    <dd class="col-sm-10">@Model.LastName</dd>
+
+    <dt class="col-sm-2">Email:</dt>
+    <dd class="col-sm-10">@Model.Email</dd>
+
+    <dt class="col-sm-2">Listings: </dt>
+    <dd class="col-sm-10">
+        <a asp-action="UserListings" asp-route-id="@Model.UserID">View Listings</a>
+    </dd>
+</dl>
