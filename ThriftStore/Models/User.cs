@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using ThriftStore.Models;
@@ -7,6 +7,7 @@ namespace ThriftStore.Models
 {
     public class User
     {
+        [Required]
         public int UserID { get; set; }
         [Required]
         public string Password { get; set; } = "";
