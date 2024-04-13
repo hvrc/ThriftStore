@@ -1,4 +1,4 @@
-﻿@model List<ThriftStore.Models.Listing>
+@model List<ThriftStore.Models.Listing>
 
 <h2>My Listings</h2>
 
@@ -6,7 +6,6 @@
     <thead>
         <tr>
             <th>Listing ID</th>
-            <th>Address</th>
             <th>Price</th>
             <th>Description</th>
             <th>Is Available</th>
@@ -17,7 +16,6 @@
         {
             <tr>
                 <td>@listing.ListingID</td>
-                <td>@listing.Address</td>
                 <td>@listing.Price</td>
                 <td>@listing.Description</td>
                 <td>@(listing.IsAvailable ? "Yes" : "No")</td>
