@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using ThriftStore.Models;
 using ThriftStore.Data;
 using System;
@@ -126,5 +126,21 @@ namespace ThriftStore.Controllers
 
             return View(user);
         }
+
+        // Displays all listings made by a specific user.
+        public IActionResult UserListings(int id)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.UserID == id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var userlistings = _context.Listings.Where(l => l.TempUserID == id).ToList();
+
+            return View(userlistings);
+        }
+
     }
 }
