@@ -1,0 +1,30 @@
+﻿@model List<ThriftStore.Models.Listing>
+
+<h2>All Listings</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Listing ID</th>
+            <th>User ID</th>
+            <th>Address</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Is Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var listing in Model)
+        {
+            <tr>
+                <td>@listing.ListingID</td>
+                <td>@listing.TempUserID</td>
+                <td>@listing.Address</td>
+                <td>@listing.Price</td>
+                <td>@listing.Description</td>
+                <td>@(listing.IsAvailable ? "Yes" : "No")</td>
+                <td><a asp-controller="Listing" asp-action="ListingDetails" asp-route-id="@listing.ListingID">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
