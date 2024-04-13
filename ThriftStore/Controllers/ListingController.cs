@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ThriftStore.Models;
 using ThriftStore.Data;
@@ -54,5 +54,36 @@ public class ListingController : Controller
         }
 
         return View(listing);
+    }
+
+    // Displays the confirmation page for deleting a listing.
+    [HttpGet]
+    public IActionResult ListingDelete(int id)
+    {
+        var listing = _context.Listings.FirstOrDefault(l => l.ListingID == id);
+
+        if (listing == null)
+        {
+            return NotFound();
+        }
+
+        return View(listing);
+    }
+
+    // Handles the deletion of a listing.
+    [HttpPost, ActionName("ListingDelete")]
+    public IActionResult ListingDeleteConfirmed(int id)
+    {
+        var listing = _context.Listings.FirstOrDefault(l => l.ListingID == id);
+
+        if (listing == null)
+        {
+            return NotFound();
+        }
+
+        _context.Listings.Remove(listing);
+        _context.SaveChanges();
+
+        return RedirectToAction("ListingIndex");
     }
 }
